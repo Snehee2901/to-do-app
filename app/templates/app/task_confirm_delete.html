@@ -1,0 +1,13 @@
+{% extends 'app/main.html'%}
+{% block content%}
+
+<div class='header-bar'>
+<a href={% url  'tasklist' %}>&#8592;Back</a>
+</div>
+<form method="POST">
+    {% csrf_token %}
+    <p>Are you sure, you want to delete task? {{task}}</p>
+    <input type="submit" value="Delete" class='btn'>
+</form>
+
+{% endblock %}
